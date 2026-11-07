@@ -1,0 +1,1 @@
+import test from"node:test";import assert from"node:assert/strict";import{renderMarkdown}from"../src/markdown.js";test("renders headings and escapes markup",()=>{const h=renderMarkdown("# Title\n\n<script>alert(1)</script>");assert.match(h,/<h1>Title<\/h1>/);assert.doesNotMatch(h,/<script>/);});
